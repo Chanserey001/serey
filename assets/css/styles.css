@@ -288,10 +288,10 @@ img {
 
 .home__social {
    font-size: 2rem; /* Size of the icons */
-            color: aqua; /* Initial color of the icons */
-            transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and size */
-            text-decoration: none; /* Remove underline */
-            margin: 0 10px; /* Space between icons */
+   color: aqua; /* Initial color of the icons */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and size */
+    text-decoration: none; /* Remove underline */
+    margin: 0 10px; /* Space between icons */
 }
 .home__social-icon {
   width: max-content;
