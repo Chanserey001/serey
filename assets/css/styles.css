@@ -215,13 +215,13 @@ img {
 }
 @media screen and (max-width: 767px) {
   .nav__menu {
-    position: fixed;
+  position: fixed;
   top: var(--header-height);
   right: -100%;
   width: 80%;
   height: 100%;
   padding: 2rem;
-  background-color: rgba(0, 0, 0, 0.8); /* Black with 80% opacity */
+  background-color: rgba(60, 201, 192, 0.8); /* Black with 80% opacity */
   transition: right 0.5s ease, background-color 0.5s ease;
   }
 }
