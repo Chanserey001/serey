@@ -34,6 +34,8 @@
   }
 }
 
+
+
 /*Add animation Text*/
 @keyframes jump {
   0%, 100% {
@@ -66,7 +68,207 @@
 .jump:nth-child(6) {
   animation-delay: 0.2s;
 }
+ /*===== for qrcode =====*/
+/* Payment Section Styles */
+.payment {
+  padding: 2rem;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Center content vertically */
+  min-height: 100vh; /* Full viewport height */
+}
 
+.section-title {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+/* Grid Container for Payment Items */
+.payment__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+  gap: 1rem;
+  width: 100%;
+  max-width: 1200px; /* Max width for large screens */
+  margin: 0 auto; /* Center grid container */
+}
+
+/* Payment Item Styles */
+.payment__item {
+  text-align: center;
+  padding: 1rem;
+  background-color: #222;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer; /* Indicate clickable */
+}
+
+.payment__item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+}
+
+.payment__img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.payment__item:hover .payment__img {
+  transform: scale(1.1);
+}
+
+.payment__info {
+  display: flex;
+  justify-content: center; /* Horizontally center the text */
+  align-items: center; /* Vertically center the text */
+  text-align: center; /* Ensure text inside the flex container is centered */
+  background-color: #000000;
+  padding: 20px;
+}
+
+.payment__info-text {
+  text-align: center; /* Center the text inside this element */
+}
+
+.payment__info-text strong {
+  color: aquamarine;
+  font-size: 20px;
+}
+
+
+/* Modal Styles */
+.modal1 {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000; /* Ensure it's on top of other elements */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex; /* Flexbox for centering */
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+  object-fit: contain;
+  position: relative; /* Needed for positioning the close button */
+}
+
+/* Hover effect on close button */
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .modal-content {
+    max-width: 85%;
+    max-height: 85%;
+  }
+
+  .close {
+    top: 25px;
+    right: 25px;
+    font-size: 32px;
+  }
+
+  .overlay-text {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .modal-content {
+    max-width: 90%;
+    max-height: 80%;
+  }
+
+  .close {
+    top: 15px;
+    right: 15px;
+    font-size: 28px;
+  }
+
+  .overlay-text {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 400px) {
+  .modal-content {
+    max-width: 95%;
+    max-height: 75%;
+  }
+
+  .close {
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+  }
+
+  .overlay-text {
+    font-size: 12px;
+  }
+}
+
+/* Modal hidden by default */
+#imageModal {
+  display: none; /* Hidden initially */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9); /* Black background with opacity */
+  justify-content: center; /* Flexbox to center image */
+  align-items: center;
+}
+
+#modalImage {
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.overlay-text {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  display: none; /* Hidden by default */
+  font-size: 16px;
+}
+
+.close {
+  position: absolute; /* Ensure it stays positioned relative to the modal */
+  bottom: 20px; /* Move the button 20px from the bottom of the modal */
+  right: 20px; /* Adjust its position from the right, if needed */
+  font-size: 24px; /* Increase font size if needed */
+  cursor: pointer; /* Change cursor to pointer when hovering over the close button */
+  padding: 10px;
+  background-color: #000000; /* Optional: styling the close button */
+  border-radius: 50%; /* Optional: makes the button round */
+  border: none; /* Optional: remove border */
+  z-index: 1000; /* Ensure it appears on top of other elements */
+}
 
 /*===== BASE =====*/
 *, ::before, ::after {
@@ -288,10 +490,10 @@ img {
 
 .home__social {
    font-size: 2rem; /* Size of the icons */
-   color: aqua; /* Initial color of the icons */
-    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and size */
-    text-decoration: none; /* Remove underline */
-    margin: 0 10px; /* Space between icons */
+            color: aqua; /* Initial color of the icons */
+            transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and size */
+            text-decoration: none; /* Remove underline */
+            margin: 0 10px; /* Space between icons */
 }
 .home__social-icon {
   width: max-content;
