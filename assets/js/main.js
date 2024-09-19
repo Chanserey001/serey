@@ -10,7 +10,47 @@ const showMenu = (toggleId, navId) =>{
     }
 }
 showMenu('nav-toggle','nav-menu')
+/*==================== display image qr ====================*/
+    document.addEventListener('DOMContentLoaded', function () {
+    // Function to open the modal
+    function openModal(imageSrc) {
+      const modal = document.getElementById('imageModal');
+      const modalImage = document.getElementById('modalImage');
+      const overlayText = document.querySelector('.overlay-text');
+      
+      modal.style.display = 'flex'; // Show the modal
+      modalImage.src = imageSrc; // Set the image source
+      overlayText.style.display = 'block'; // Show the overlay text
+    }
+  
+   // Function to close the modal
+   function closeModal() {
+    const modal = document.getElementById('imageModal');
+    const overlayText = document.querySelector('.overlay-text');
+    
+    modal.style.display = 'none'; // Hide the modal
+    overlayText.style.display = 'none'; // Hide the overlay text
+}
 
+// Add event listeners to the images
+document.querySelectorAll('.payment__item').forEach(item => {
+    item.addEventListener('click', function () {
+        const imageSrc = this.querySelector('.payment__img').src;
+        openModal(imageSrc);
+    });
+});
+
+// Add event listener to the close button
+document.querySelector('.close').addEventListener('click', closeModal);
+
+// Close modal when clicking outside the image
+document.getElementById('imageModal').addEventListener('click', function (event) {
+    if (event.target === this) {
+        closeModal();
+    }
+});
+});
+  
 /*==================== REMOVE MENU MOBILE ====================*/
 const navLink = document.querySelectorAll('.nav__link')
 
