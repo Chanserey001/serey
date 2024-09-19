@@ -25,6 +25,7 @@
                         <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
                         <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
                         <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+                        <li class="nav__item"><a href="#payment" class="nav__link">QR code</a></li>
                         <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
                         <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
                     </ul>
@@ -53,7 +54,7 @@
                     <a href="https://www.linkedin.com/in/uy-chanserey-725793317/" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
                     <a href="https://github.com/Chanserey001" class="home__social-icon"><i class='bx bxl-github' ></i></a>
                     <a href="https://www.facebook.com/CrozXMagMa/" class="home__social-icon" target="_blank"><i class='bx bxl-facebook'></i></a>
-                    <a href="https://t.me/serey01s" class="home__social-icon" target="_blank"><i class='bx bxl-telegram'></i></a>
+                    <a href="https://t.me/serey01s" class="home__social-icon" target="_blank"><i class='bx bxl-telegram'></i></a><br>
                     <a href="https://www.instagram.com/serey_chan1/" class="home__social-icon" target="_blank"><i class='bx bxl-instagram'></i></a>
 
                 </div>
@@ -152,6 +153,48 @@
                 </div>
             </section>
 
+            <!--===== Qr code =====-->
+     <section class="payment section" id="payment">
+    <h2 class="section-title">Payment Information</h2>
+
+    <div class="payment__container">
+        <div class="payment__item" onclick="openModal('assets/img/qrac$.jpg')">
+            <img src="assets/img/qrac$.jpg" alt="Payment Method 1" class="payment__img">
+            <p class="payment__text">ACLEDA $ACCOUNT</p>
+        </div>
+        <div class="payment__item" onclick="openModal('assets/img/qracr.jpg')">
+            <img src="assets/img/qracr.jpg" alt="Payment Method 2" class="payment__img">
+            <p class="payment__text">ACLEDA Riel ACCOUNT.</p>
+        </div>
+        <div class="payment__item" onclick="openModal('assets/img/qraba$.jpg')">
+            <img src="assets/img/qraba$.jpg" alt="Payment Method 3" class="payment__img">
+            <p class="payment__text">ABA $ ACCOUNT.</p>
+        </div>
+        <div class="payment__item" onclick="openModal('assets/img/qrabar.jpg')">
+            <img src="assets/img/qrabar.jpg" alt="Payment Method 4" class="payment__img">
+            <p class="payment__text">ABA Riel ACCOUNT.</p>
+        </div>
+        <div class="payment__item" onclick="openModal('assets/img/wing2.jpg')">
+            <img src="assets/img/wing2.jpg" alt="Payment Method 5" class="payment__img">
+            <p class="payment__text">WING RieL ACCOUNT ONLY</p>
+        </div>
+    </div>
+    <br>
+    <div class="payment__info">
+        <p class="payment__info-text">
+            For any questions or concerns regarding payments, please feel free to contact our support team. We're here to assist you with any issues or inquiries related to your payments.
+            <strong style="color:aquamarine">Thank you for choosing our services!</strong>
+        </p>
+    </div>
+
+    <!-- Modal for full-screen image -->
+    <div id="imageModal" class="modal1">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div class="overlay-text">Tap somewhere to close</div>
+    </div>
+
+       </section>
             <!--===== WORK =====-->
             <section class="work section" id="work">
                 <h2 class="section-title">Work</h2>
